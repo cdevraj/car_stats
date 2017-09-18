@@ -1,8 +1,10 @@
 class Api::V1::CarsController < ApplicationController
   respond_to :json
+  include Roar::Rails::ControllerAdditions
 
   def index
-    respond_with Car.where(car_slug: params[:slug])
+    car = Car.where(car_slug: params[:slug]).first
+    respond_with car 
   end
 
 end

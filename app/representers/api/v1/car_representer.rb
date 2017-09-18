@@ -1,0 +1,16 @@
+module Api::V1::CarRepresenter
+  include Roar::JSON
+  nested :data do
+    nested :car do  
+      property :id  
+      property :car_slug  
+      property :get_max_speed, as: :max_speed 
+    end
+  end
+
+
+  def get_max_speed
+    return "0 Km/hr" unless self.max_speed
+    "#{self.max_speed} Km/hr"
+  end
+end
