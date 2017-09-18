@@ -1,16 +1,12 @@
 Rails.application.routes.draw do
-  def api_version(version, &routes)
-    api_constraint = ApiConstraint.new(version: version)
-    scope(module: "v#{version}", constraints: api_constraint, &routes)
+
+  namespace :api, defaults: {format: 'json'} do
+     namespace :v1 do
+      get '/cars/:slug', to: 'cars#index'
+    end
   end
 
-  api_version(1) do
-    resources :cars, only: :index
-  end
 
-  api_version(2) do
-    resources :cars, only: :index
-  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
