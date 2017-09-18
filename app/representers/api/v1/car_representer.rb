@@ -5,7 +5,7 @@ module Api::V1::CarRepresenter
       property :id  
       property :car_slug  
       property :get_max_speed, as: :max_speed
-      property :max_speed_on_track 
+      property :max_speed_on_track, getter: lambda { |opts| opts[:track] }
     end
   end
 

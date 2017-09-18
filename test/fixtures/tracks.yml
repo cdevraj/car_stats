@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  surface_type: MyString
+  slow_factor: 1
+
+two:
+  name: MyString
+  surface_type: MyString
+  slow_factor: 1
