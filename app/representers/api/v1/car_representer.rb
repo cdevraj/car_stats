@@ -4,7 +4,8 @@ module Api::V1::CarRepresenter
     nested :car do  
       property :id  
       property :car_slug  
-      property :get_max_speed, as: :max_speed 
+      property :get_max_speed, as: :max_speed
+      property :max_speed_on_track 
     end
   end
 
